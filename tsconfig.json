@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    // Node: estructura del proyecto
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    // Node / Express
+    "target": "ES2020",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "lib": ["es2020"],
+    "types": ["node", "express"],
+
+    // TS estrictos
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // Mapas útiles
+    "sourceMap": true,
+    "skipLibCheck": true,
+
+    // Modules
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
