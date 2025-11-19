@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "ts-node-dev --respawn index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "knex": "knex --knexfile knexfile.ts"
+    "knex": "knex --knexfile ./src/database/knexfile.ts"
   },
   "keywords": [],
   "author": "",

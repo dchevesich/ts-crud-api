@@ -1,16 +1,14 @@
-import express, {Request, Response} from 'express';
-
+import express from 'express';
+import userRoutes from './src/routes/userRoutes';
 const app = express();
 
 const PORT = 3000;
 
+// Rutas
+
 app.use(express.json());
 
-app.get("/", (req: Request,res: Response) => {
-    res.send("Api funcionando desde un get")
-})
-
-
+app.use("/api/usuarios", userRoutes);
 
 app.listen(PORT, () => {
     console.log("Express corriendo en el puerto:", PORT)

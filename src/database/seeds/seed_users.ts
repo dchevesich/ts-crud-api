@@ -8,15 +8,19 @@ export async function seed(knex: Knex): Promise<void> {
   await knex("users").insert([
     {
       name: "Juan Pérez",
-      email: "juan@example.com"
+      email: "juan@example.com",
+      password: "asd123!"
     },
     {
       name: "Ana González",
-      email: "ana@example.com"
+      email: "ana@example.com",
+      password: "asd123!"
+      
     },
     {
       name: "Roberto Soto",
-      email: "roberto@example.com"
+      email: "roberto@example.com",
+      password: "asd123!"
     }
   ]);
 }
