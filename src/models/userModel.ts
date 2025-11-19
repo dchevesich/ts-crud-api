@@ -1,8 +1,9 @@
 import { User, CreateUserDTO } from "../types/user";
 import db from "../database/db";
 
-// data: Recibe los datos puros (DTO)
-// Promise: Devuelve el usuario completo que creó la BD
+// data: Recibe los datos desde la interfaz mediante una variable CreateUserDTO
+// donde omite algunos atributos
+
 // Post
 export const crearUsuario = async (data: CreateUserDTO): Promise<User> => {
     const resultado = await db('users').insert(data).returning("*");
@@ -30,8 +31,7 @@ export const eliminarUsuario = async (id: number): Promise <User | undefined> =>
 }
 
 
-// Put 
-
+// Put Partial es básicamente un id? o un number? no tiene que cumplir todo lo ya creado en la interfaz
 export const actualizarUsuario = async (id: number, data: Partial<CreateUserDTO>): Promise <User | undefined> =>{
     const resultado = await db('users').where("id", id).update(data).returning("*")
     return resultado[0]

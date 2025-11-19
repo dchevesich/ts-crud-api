@@ -1,4 +1,5 @@
 import type { Knex } from "knex";
+import path from "path"; // <--- 1. IMPORTA ESTO
 
 const config: { [key: string]: Knex.Config } = {
   development: {
@@ -10,10 +11,12 @@ const config: { [key: string]: Knex.Config } = {
       database: "ts_crud_db"
     },
     migrations: {
-      directory: "./src/database/migrations"
+      
+      directory: path.join(__dirname, "migrations") 
     },
     seeds: {
-      directory: "./src/database/seeds"
+    
+      directory: path.join(__dirname, "seeds")
     }
   }
 };
